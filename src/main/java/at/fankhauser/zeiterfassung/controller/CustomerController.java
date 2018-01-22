@@ -22,8 +22,7 @@ public class CustomerController {
 
 	@RequestMapping(value = "/postcustomer", method = RequestMethod.POST)
 	public void postCustomer(@RequestBody Customer customer) {
-
-		repository.save(new Customer(customer.getFirstName(), customer.getLastName()));
+		repository.save(customer);
 	}
 
 	@RequestMapping("/findall")
