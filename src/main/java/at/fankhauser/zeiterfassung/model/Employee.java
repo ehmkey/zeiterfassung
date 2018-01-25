@@ -32,12 +32,12 @@ public class Employee {
 	private String bic;
 	private String bankname;
 	
-	private List<Order> orders;
+//	private List<Order> orders;
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "work", joinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"))
-	public List<Order> getOrders() {
-		return orders;
-	}
+//	@ManyToMany(cascade = CascadeType.ALL)
+//	@JoinTable(name = "work", joinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"))
+//	public List<Order> getOrders() {
+//		return orders;
+//	}
 
 }

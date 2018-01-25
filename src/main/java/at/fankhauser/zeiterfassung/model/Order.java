@@ -16,7 +16,7 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	private Customer2 customer;
+//	private Customer2 customer;
 	private Long calcualtedHours;
 	private LocalDate incomming;
 	private String rechnungsnummer;
@@ -24,12 +24,12 @@ public class Order {
 	private Long price;
 	private int kw;
 	
-	private List<Employee> employees;
-
-	@ManyToMany(mappedBy = "orders")
-	public List<Employee> getEmployees() {
-		return employees;
-	}
+//	private List<Employee> employees;
+//
+//	@ManyToMany(mappedBy = "orders")
+//	public List<Employee> getEmployees() {
+//		return employees;
+//	}
 
 	public Long getId() {
 		return id;
@@ -39,13 +39,13 @@ public class Order {
 		this.id = id;
 	}
 
-	public Customer2 getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer2 customer) {
-		this.customer = customer;
-	}
+//	public Customer2 getCustomer() {
+//		return customer;
+//	}
+//
+//	public void setCustomer(Customer2 customer) {
+//		this.customer = customer;
+//	}
 
 	public Long getCalcualtedHours() {
 		return calcualtedHours;
@@ -95,10 +95,10 @@ public class Order {
 		this.kw = kw;
 	}
 
-	@Override
-	public String toString() {
-		return "Order [id=" + id + ", customer=" + customer + ", calcualtedHours=" + calcualtedHours + ", incomming="
-				+ incomming + ", rechnungsnummer=" + rechnungsnummer + ", Rechungsdatum=" + Rechungsdatum + ", price="
-				+ price + ", kw=" + kw + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Order [id=" + id + ", customer=" + customer + ", calcualtedHours=" + calcualtedHours + ", incomming="
+//				+ incomming + ", rechnungsnummer=" + rechnungsnummer + ", Rechungsdatum=" + Rechungsdatum + ", price="
+//				+ price + ", kw=" + kw + "]";
+//	}
 }

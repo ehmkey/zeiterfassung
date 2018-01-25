@@ -8,6 +8,9 @@
 	<artifactId>zeiterfassung</artifactId>
 	<version>0.1.0</version>
 
+	<name>Zeiterfassung</name>
+	<description>Zeiterfassung Tischlerei Fankhauser</description>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -23,6 +26,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
 		</dependency>
 
 		<dependency>
