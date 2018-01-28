@@ -44,7 +44,7 @@ public class CustomerController {
 	@RequestMapping("/findbylastname")
 	public Response findByLastName(@RequestParam("lastName") String lastName) {
 
-		List<Customer> customers = repository.findByLastName(lastName);
+		List<Customer> customers = repository.findByName(lastName);
 
 		return new Response("Done", customers);
 	}

@@ -3,11 +3,16 @@ package at.fankhauser.zeiterfassung.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Order {
@@ -15,22 +20,31 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
-//	private Customer2 customer;
-	private Long calcualtedHours;
-	private LocalDate incomming;
-	private String rechnungsnummer;
-	private LocalDate Rechungsdatum;
-	private Long price;
-	private int kw;
 	
-//	private List<Employee> employees;
-//
-//	@ManyToMany(mappedBy = "orders")
-//	public List<Employee> getEmployees() {
-//		return employees;
-//	}
+	@OneToOne
+	@JoinColumn(name="customer_id")
+	private Customer customer;
 
+	@Column(name ="calcualted_hours")
+	private Long calcualtedHours;
+	
+	@Column(name ="order_date")
+	private LocalDate orderDate;
+	
+	@Column(name ="invoice_number")
+	private String invoiceNumber;
+	
+	@Column(name ="invoice_date")
+	private LocalDate invoiceDate;
+	
+	private Long price;
+	
+	@Column(name ="delivery_week")
+	private int deliveryWeek;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "primaryKey.order", cascade=CascadeType.ALL)
+	private List<WorkedOrder> workedOrders; 
+	
 	public Long getId() {
 		return id;
 	}
@@ -38,14 +52,6 @@ public class Order {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-//	public Customer2 getCustomer() {
-//		return customer;
-//	}
-//
-//	public void setCustomer(Customer2 customer) {
-//		this.customer = customer;
-//	}
 
 	public Long getCalcualtedHours() {
 		return calcualtedHours;
@@ -55,28 +61,28 @@ public class Order {
 		this.calcualtedHours = calcualtedHours;
 	}
 
-	public LocalDate getIncomming() {
-		return incomming;
+	public LocalDate getOrderDate() {
+		return orderDate;
 	}
 
-	public void setIncomming(LocalDate incomming) {
-		this.incomming = incomming;
+	public void setOrderDate(LocalDate orderDate) {
+		this.orderDate = orderDate;
 	}
 
-	public String getRechnungsnummer() {
-		return rechnungsnummer;
+	public String getInvoiceNumber() {
+		return invoiceNumber;
 	}
 
-	public void setRechnungsnummer(String rechnungsnummer) {
-		this.rechnungsnummer = rechnungsnummer;
+	public void setInvoiceNumber(String invoiceNumber) {
+		this.invoiceNumber = invoiceNumber;
 	}
 
-	public LocalDate getRechungsdatum() {
-		return Rechungsdatum;
+	public LocalDate getInvoiceDate() {
+		return invoiceDate;
 	}
 
-	public void setRechungsdatum(LocalDate rechungsdatum) {
-		Rechungsdatum = rechungsdatum;
+	public void setInvoiceDate(LocalDate invoiceDate) {
+		this.invoiceDate = invoiceDate;
 	}
 
 	public Long getPrice() {
@@ -87,18 +93,19 @@ public class Order {
 		this.price = price;
 	}
 
-	public int getKw() {
-		return kw;
+	public int getDeliveryWeek() {
+		return deliveryWeek;
 	}
 
-	public void setKw(int kw) {
-		this.kw = kw;
+	public void setDeliveryWeek(int deliveryWeek) {
+		this.deliveryWeek = deliveryWeek;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Order [id=" + id + ", customer=" + customer + ", calcualtedHours=" + calcualtedHours + ", incomming="
-//				+ incomming + ", rechnungsnummer=" + rechnungsnummer + ", Rechungsdatum=" + Rechungsdatum + ", price="
-//				+ price + ", kw=" + kw + "]";
-//	}
+	public List<WorkedOrder> getWorkingOrders() {
+		return workedOrders;
+	}
+
+	public void setWorkingOrders(List<WorkedOrder> workingOrders) {
+		this.workedOrders = workingOrders;
+	}
 }

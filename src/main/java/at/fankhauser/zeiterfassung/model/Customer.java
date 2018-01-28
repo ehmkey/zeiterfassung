@@ -15,40 +15,49 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-	private String firstName;
-    private String lastName;
-
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
-	}
-    
-    public Long getId() {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String name;
+	private String phone;
+	private String contact;
+	private String address;
+	
+	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public String getLastName() {
-		return lastName;
+	public String getPhone() {
+		return phone;
 	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-
+	public String getContact() {
+		return contact;
+	}
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", name=" + name + ", phone=" + phone + ", contact=" + contact + ", address="
+				+ address + "]";
+	}
 }
 

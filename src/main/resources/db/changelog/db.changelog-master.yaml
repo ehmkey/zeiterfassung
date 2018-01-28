@@ -33,9 +33,53 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: false
-      id: 2
-      author: Markus
-      changes:
+        - createTable:
+            tableName: order
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: customer_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_customer_id
+                    references: customer(id)
+              - column:
+                  name: calcualted_hours
+                  type: numeric
+                  constraints:
+                    nullable: false
+              - column:
+                  name: order_date
+                  type: date
+                  constraints:
+                    nullable: true
+              - column:
+                  name: invoice_number
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: invoice_date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delivery_week
+                  type: int
+                  constraints:
+                    nullable: false
         - createTable:
             tableName: employee
             columns:
@@ -96,3 +140,38 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: true
+  - changeSet:
+      id: 2
+      author: Markus
+      changes:
+        - createTable:
+            tableName: worked_order
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_order_id
+                    references: order(id)
+              - column:
+                  name: employee_id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_employee_id
+                    references: employee(id)
+              - column:
+                  name: working_date
+                  type: date
+                  constraints:
+                    nullable: false
