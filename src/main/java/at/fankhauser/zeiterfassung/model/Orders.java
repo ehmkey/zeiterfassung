@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,8 +15,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
 @Entity
-public class Order {
+public class Orders {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,12 +35,14 @@ public class Order {
 	private Long calcualtedHours;
 	
 	@Column(name ="order_date")
+	@Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
 	private LocalDate orderDate;
 	
 	@Column(name ="invoice_number")
 	private String invoiceNumber;
 	
 	@Column(name ="invoice_date")
+	@Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
 	private LocalDate invoiceDate;
 	
 	private Long price;

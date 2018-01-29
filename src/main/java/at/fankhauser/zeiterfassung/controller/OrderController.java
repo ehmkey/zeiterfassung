@@ -8,23 +8,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import at.fankhauser.zeiterfassung.Application;
 import at.fankhauser.zeiterfassung.message.Response;
-import at.fankhauser.zeiterfassung.model.Order;
+import at.fankhauser.zeiterfassung.model.Orders;
 import at.fankhauser.zeiterfassung.repo.OrderRepository;
 
 @RestController
+@RequestMapping(value = "/order")
 public class OrderController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Application.class);
-	
+
 	@Autowired
 	private OrderRepository repo;
-	
-	
-	@RequestMapping("/findall123")
-	public Response findAll() {
 
-		Iterable<Order> orders = repo.findAll();
-	
+	@RequestMapping("/")
+	public Response findAll() {
+		Iterable<Orders> orders = repo.findAll();
+
 		LOG.debug("Orders gesucht...");
 
 		return new Response("Done", orders);

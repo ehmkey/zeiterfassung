@@ -1,6 +1,13 @@
 logging:
   level:
     at.fankhauser: DEBUG
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
   file: logs/${spring.application.name}.log
 spring:
   datasource:
@@ -18,3 +25,6 @@ spring:
       suffix : .jsp
   application:
     name: Zeiterfassung
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false

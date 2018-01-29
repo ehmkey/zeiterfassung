@@ -34,7 +34,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
         - createTable:
-            tableName: order
+            tableName: orders
             columns:
               - column:
                   name: id
@@ -161,7 +161,7 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
                     foreignKeyName: fk_order_id
-                    references: order(id)
+                    references: orders(id)
               - column:
                   name: employee_id
                   type: int

@@ -15,6 +15,7 @@ import at.fankhauser.zeiterfassung.model.Customer;
 import at.fankhauser.zeiterfassung.repo.CustomerRepository;
 
 @RestController
+@RequestMapping(value = "/customer")
 public class CustomerController {
 
 	@Autowired
@@ -25,7 +26,7 @@ public class CustomerController {
 		repository.save(customer);
 	}
 
-	@RequestMapping("/findall")
+	@RequestMapping("/")
 	public Response findAll() {
 
 		Iterable<Customer> customers = repository.findAll();
@@ -33,7 +34,7 @@ public class CustomerController {
 		return new Response("Done", customers);
 	}
 
-	@RequestMapping("/customer/{id}")
+	@RequestMapping("/{id}")
 	public Response findCustomerById(@PathVariable("id") long id) {
 
 		Customer customer = repository.findOne(id);

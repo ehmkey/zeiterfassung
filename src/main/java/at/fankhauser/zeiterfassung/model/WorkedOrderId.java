@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 public class WorkedOrderId implements Serializable {
 
 		@ManyToOne
-		private Order order;
+		private Orders order;
 	    
 		@ManyToOne
 		private Employee employee;
@@ -31,11 +31,11 @@ public class WorkedOrderId implements Serializable {
 			return Objects.hash(getOrder(), getEmployee());
 		}
 
-		public Order getOrder() {
+		public Orders getOrder() {
 			return order;
 		}
 
-		public void setOrder(Order order) {
+		public void setOrder(Orders order) {
 			this.order = order;
 		}
 
