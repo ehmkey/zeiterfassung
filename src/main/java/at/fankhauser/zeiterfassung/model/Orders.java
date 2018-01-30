@@ -17,9 +17,9 @@ import javax.persistence.OneToOne;
 
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import lombok.Data;
 
+@Data
 @Entity
 public class Orders {
 
@@ -50,70 +50,6 @@ public class Orders {
 	@Column(name ="delivery_week")
 	private int deliveryWeek;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "primaryKey.order", cascade=CascadeType.ALL)
-	private List<WorkedOrder> workedOrders; 
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Long getCalcualtedHours() {
-		return calcualtedHours;
-	}
-
-	public void setCalcualtedHours(Long calcualtedHours) {
-		this.calcualtedHours = calcualtedHours;
-	}
-
-	public LocalDate getOrderDate() {
-		return orderDate;
-	}
-
-	public void setOrderDate(LocalDate orderDate) {
-		this.orderDate = orderDate;
-	}
-
-	public String getInvoiceNumber() {
-		return invoiceNumber;
-	}
-
-	public void setInvoiceNumber(String invoiceNumber) {
-		this.invoiceNumber = invoiceNumber;
-	}
-
-	public LocalDate getInvoiceDate() {
-		return invoiceDate;
-	}
-
-	public void setInvoiceDate(LocalDate invoiceDate) {
-		this.invoiceDate = invoiceDate;
-	}
-
-	public Long getPrice() {
-		return price;
-	}
-
-	public void setPrice(Long price) {
-		this.price = price;
-	}
-
-	public int getDeliveryWeek() {
-		return deliveryWeek;
-	}
-
-	public void setDeliveryWeek(int deliveryWeek) {
-		this.deliveryWeek = deliveryWeek;
-	}
-
-	public List<WorkedOrder> getWorkingOrders() {
-		return workedOrders;
-	}
-
-	public void setWorkingOrders(List<WorkedOrder> workingOrders) {
-		this.workedOrders = workingOrders;
-	}
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "primaryKey.order", cascade=CascadeType.ALL)
+//	private List<WorkedOrder> workedOrders; 
 }

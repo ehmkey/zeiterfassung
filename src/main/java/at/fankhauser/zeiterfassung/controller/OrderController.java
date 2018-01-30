@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import at.fankhauser.zeiterfassung.Application;
 import at.fankhauser.zeiterfassung.message.Response;
 import at.fankhauser.zeiterfassung.model.Orders;
 import at.fankhauser.zeiterfassung.repo.OrderRepository;
@@ -15,12 +14,12 @@ import at.fankhauser.zeiterfassung.repo.OrderRepository;
 @RequestMapping(value = "/order")
 public class OrderController {
 
-	private static final Logger LOG = LoggerFactory.getLogger(Application.class);
+	private static final Logger LOG = LoggerFactory.getLogger(OrderController.class);
 
 	@Autowired
 	private OrderRepository repo;
 
-	@RequestMapping("/")
+	@RequestMapping
 	public Response findAll() {
 		Iterable<Orders> orders = repo.findAll();
 

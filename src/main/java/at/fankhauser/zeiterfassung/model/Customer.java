@@ -6,12 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+
 /**
  * Model for Customer
  * 
  * @author Markus Kienleitner
  *
  */
+@Data
 @Entity
 public class Customer {
 
@@ -22,42 +25,5 @@ public class Customer {
 	private String phone;
 	private String contact;
 	private String address;
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-	public String getContact() {
-		return contact;
-	}
-	public void setContact(String contact) {
-		this.contact = contact;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", name=" + name + ", phone=" + phone + ", contact=" + contact + ", address="
-				+ address + "]";
-	}
 }
 

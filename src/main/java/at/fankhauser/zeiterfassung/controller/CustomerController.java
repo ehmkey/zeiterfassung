@@ -26,7 +26,7 @@ public class CustomerController {
 		repository.save(customer);
 	}
 
-	@RequestMapping("/")
+	@RequestMapping
 	public Response findAll() {
 
 		Iterable<Customer> customers = repository.findAll();

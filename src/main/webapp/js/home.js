@@ -17,7 +17,7 @@ app.config(['$httpProvider', function ($httpProvider) {
 
 app.controller('postController', function($scope, $http, $location) {
 	$scope.submitForm = function() {
-		var url = $location.absUrl() + "postcustomer";
+		var url = $location.absUrl() + "customer";
 
 		var config = {
 			headers : {
@@ -46,7 +46,7 @@ app.controller('getallcustomersController', function($scope, $http, $location) {
 	$scope.showAllCustomers = false;
 
 	$scope.getAllCustomers = function() {
-		var url = $location.absUrl() + "findall";
+		var url = $location.absUrl() + "customer";
 
 		var config = {
 			headers : {
@@ -108,7 +108,7 @@ app.controller('getcustomersbylastnameController', function($scope, $http,
 	$scope.showCustomersByLastName = false;
 
 	$scope.getCustomersByLastName = function() {
-		var url = $location.absUrl() + "findbylastname";
+		var url = $location.absUrl() + "/customer/findbylastname";
 
 		var config = {
 			headers : {

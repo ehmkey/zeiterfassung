@@ -10,10 +10,12 @@
 
 <link rel="stylesheet" href="/js/lib/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="js/lib/ng-dialog/css/ngDialog.min.css">
-<link rel="stylesheet" href="/js/lib/ng-dialog/css/ngDialog-theme-default.min.css">
+<link rel="stylesheet"
+	href="/js/lib/ng-dialog/css/ngDialog-theme-default.min.css">
 <link rel="stylesheet" href="js/lib/ng-toast/ngToast.min.css">
 
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
 <script src="/js/home.js"></script>
 <script src="/js/lib/ng-dialog/js/ngDialog.min.js"></script>
 
@@ -23,9 +25,30 @@
 </head>
 <body>
 	<div class="container" ng-app="app">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+			class="navbar-brand" href="#">Navbar</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link" href="#">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Features</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+			</ul>
+		</div>
+		</nav>
+
+
 		<h1>Kunden Verwaltung</h1>
 		<toast></toast>
-		<div ng-show="errormessage" class="animate-show-hide alert alert-danger">{{errormessage}}</div>
+		<div ng-show="errormessage"
+			class="animate-show-hide alert alert-danger">{{errormessage}}</div>
 		<div ng-show="successmessage" class="alert alert-success">{{successmessage}}</div>
 		<div class="container">
 			<div class="row">
@@ -60,9 +83,10 @@
 				<div ng-show="showAllCustomers">
 					<table border="1" class="table">
 						<tr ng-repeat="customer in allcustomers.data">
-							<td>{{customer.id}}</td>
-							<td>{{customer.firstName}}</td>
-							<td>{{customer.lastName}}</td>
+							<td>{{customer.name}}</td>
+							<td>{{customer.phone}}</td>
+							<td>{{customer.contact}}</td>
+							<td>{{customer.address}}</td>
 						</tr>
 					</table>
 				</div>
