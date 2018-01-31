@@ -1,4 +1,4 @@
-package at.fankhauser.zeiterfassung.controller;
+package at.fankhauser.zeiterfassung.rest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,8 +21,8 @@ import at.fankhauser.zeiterfassung.repo.WorkedOrderRepository;
  */
 @RestController
 @RequestMapping(value = "/worked")
-public class WorkedController {
-	private static final Logger LOG = LoggerFactory.getLogger(WorkedController.class);
+public class WorkedApi {
+	private static final Logger LOG = LoggerFactory.getLogger(WorkedApi.class);
 
 	@Autowired
 	WorkedOrderRepository repository;

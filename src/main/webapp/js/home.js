@@ -17,7 +17,7 @@ app.config(['$httpProvider', function ($httpProvider) {
 
 app.controller('postController', function($scope, $http, $location) {
 	$scope.submitForm = function() {
-		var url = $location.absUrl() + "customer/create";
+		var url = $location.absUrl() + "customer";
 
 		var config = {
 			headers : {

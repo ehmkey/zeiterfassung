@@ -1,4 +1,4 @@
-package at.fankhauser.zeiterfassung.controller;
+package at.fankhauser.zeiterfassung.rest;
 
 import java.util.List;
 
@@ -16,12 +16,12 @@ import at.fankhauser.zeiterfassung.repo.CustomerRepository;
 
 @RestController
 @RequestMapping(value = "/customer")
-public class CustomerController {
+public class CustomerApi {
 
 	@Autowired
 	CustomerRepository repository;
 
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public void postCustomer(@RequestBody Customer customer) {
 		repository.save(customer);
 	}

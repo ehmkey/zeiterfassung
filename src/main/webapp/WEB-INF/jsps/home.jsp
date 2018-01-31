@@ -44,7 +44,25 @@
 		<div ng-show="successmessage" class="alert alert-success">{{successmessage}}</div>
 		<div class="container">
 			<div class="row">
-				<div ng-controller="postController" class="col-md-3">
+			     <div ng-controller="getallcustomersController" class="col-md-8">
+        <h3>All Customers</h3>
+
+        <button ng-click="getAllCustomers()">Get All Customers</button>
+
+        <div ng-show="showAllCustomers">
+          <table border="1" class="table">
+            <tr ng-repeat="customer in allcustomers.data">
+              <td>{{customer.name}}</td>
+              <td>{{customer.phone}}</td>
+              <td>{{customer.contact}}</td>
+              <td>{{customer.address}}</td>
+            </tr>
+          </table>
+        </div>
+        <p>{{getResultMessage}}</p>
+      </div>
+      
+				<div ng-controller="postController" class="col-md-4">
 					<form name="customerForm" ng-submit="submitForm()">
 						<label>Name</label> 
 						<input type="text" name="name" class="form-control" ng-model="name" /> 
@@ -67,23 +85,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div ng-controller="getallcustomersController" class="col-md-3">
-				<h3>All Customers</h3>
 
-				<button ng-click="getAllCustomers()">Get All Customers</button>
-
-				<div ng-show="showAllCustomers">
-					<table border="1" class="table">
-						<tr ng-repeat="customer in allcustomers.data">
-							<td>{{customer.name}}</td>
-							<td>{{customer.phone}}</td>
-							<td>{{customer.contact}}</td>
-							<td>{{customer.address}}</td>
-						</tr>
-					</table>
-				</div>
-				<p>{{getResultMessage}}</p>
-			</div>
 
 			<div ng-controller="getcustomerController" class="col-md-3">
 				<h3>Customer by ID</h3>

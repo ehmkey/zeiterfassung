@@ -1,4 +1,4 @@
-package at.fankhauser.zeiterfassung.controller;
+package at.fankhauser.zeiterfassung.rest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +12,9 @@ import at.fankhauser.zeiterfassung.repo.OrderRepository;
 
 @RestController
 @RequestMapping(value = "/order")
-public class OrderController {
+public class OrderApi {
 
-	private static final Logger LOG = LoggerFactory.getLogger(OrderController.class);
+	private static final Logger LOG = LoggerFactory.getLogger(OrderApi.class);
 
 	@Autowired
 	private OrderRepository repo;
