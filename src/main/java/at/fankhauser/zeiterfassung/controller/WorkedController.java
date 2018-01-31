@@ -45,7 +45,7 @@ public class WorkedController {
 	 * 
 	 * @param customer
 	 */
-	@RequestMapping(value = "/postcustomer", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	public Response postCustomer(@RequestBody WorkedOrder workedPerOrder) {
 		if (workedPerOrder == null) {
 			LOG.error("Working data is null");

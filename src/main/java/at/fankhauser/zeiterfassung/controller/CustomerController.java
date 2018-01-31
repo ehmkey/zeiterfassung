@@ -21,7 +21,7 @@ public class CustomerController {
 	@Autowired
 	CustomerRepository repository;
 
-	@RequestMapping(value = "/postcustomer", method = RequestMethod.POST)
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public void postCustomer(@RequestBody Customer customer) {
 		repository.save(customer);
 	}

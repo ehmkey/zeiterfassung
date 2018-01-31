@@ -17,7 +17,7 @@ app.config(['$httpProvider', function ($httpProvider) {
 
 app.controller('postController', function($scope, $http, $location) {
 	$scope.submitForm = function() {
-		var url = $location.absUrl() + "customer";
+		var url = $location.absUrl() + "customer/create";
 
 		var config = {
 			headers : {
@@ -26,8 +26,10 @@ app.controller('postController', function($scope, $http, $location) {
 		}
 
 		var data = {
-			firstName : $scope.firstname,
-			lastName : $scope.lastname
+			name : $scope.name,
+			phone : $scope.phone,
+			contact : $scope.contact,
+			address : $scope.address
 		};
 
 		$http.post(url, data, config).then(function(response) {
