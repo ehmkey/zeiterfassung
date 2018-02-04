@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Zeiterfassung Frontend
+Implementation-Version: 0.1.0-SNAPSHOT
+Built-By: m_kie
+Implementation-Vendor-Id: at.fankhauser
+Build-Jdk: 1.8.0_151
+Implementation-URL: http://projects.spring.io/spring-boot/parent/zeite
+ rfassung.frontend/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
