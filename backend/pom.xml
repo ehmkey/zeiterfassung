@@ -4,15 +4,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>at.fankhauser</groupId>
-	<artifactId>zeiterfassung.backend</artifactId>
+	<groupId>at.fankhauser.zeiterfassung</groupId>
+	<artifactId>backend</artifactId>
 	<name>Zeiterfassung Backend</name>
 	<description>Zeiterfassung Tischlerei Fankhauser Backend</description>
+	<version>0.1.0-SNAPSHOT</version>
 
 	<parent>
 		<groupId>at.fankhauser.zeiterfassung</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<properties>
@@ -70,8 +72,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>at.fankhauser</groupId>
-			<artifactId>zeiterfassung.frontend</artifactId>
+			<groupId>at.fankhauser.zeiterfassung</groupId>
+			<artifactId>frontend</artifactId>
 			<version>${project.version}</version>
 			<scope>runtime</scope>
 		</dependency>
