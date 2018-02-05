@@ -1,0 +1,28 @@
+<div class="starter-template">
+  <h1>
+    Kundenübersicht</h1>
+  <p> customer works! </p>
+
+  <h2>Kunden</h2>
+  <ul class="customers">
+    <li *ngFor="let customer of customers">
+      <span class="badge">{{customer.name}} {{customer.id}}</span>
+    </li>
+  </ul>
+</div>
+<div class="col-5">
+  <table class="table table-striped table-bordered table-hover table-sm">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <th scope="row">{{customer.id}}</th>
+        <td>{{customer.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

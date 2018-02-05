@@ -15,7 +15,7 @@ import at.fankhauser.zeiterfassung.model.Customer;
 import at.fankhauser.zeiterfassung.repo.CustomerRepository;
 
 @RestController
-@RequestMapping(value = "/customer")
+@RequestMapping(value = "/api/customer")
 public class CustomerApi {
 
 	@Autowired

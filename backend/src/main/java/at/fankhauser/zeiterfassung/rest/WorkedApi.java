@@ -20,7 +20,7 @@ import at.fankhauser.zeiterfassung.repo.WorkedOrderRepository;
  *
  */
 @RestController
-@RequestMapping(value = "/worked")
+@RequestMapping(value = "/api/worked")
 public class WorkedApi {
 	private static final Logger LOG = LoggerFactory.getLogger(WorkedApi.class);
 

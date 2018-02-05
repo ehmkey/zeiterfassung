@@ -11,7 +11,7 @@ import at.fankhauser.zeiterfassung.model.Orders;
 import at.fankhauser.zeiterfassung.repo.OrderRepository;
 
 @RestController
-@RequestMapping(value = "/order")
+@RequestMapping(value = "/api/order")
 public class OrderApi {
 
 	private static final Logger LOG = LoggerFactory.getLogger(OrderApi.class);
