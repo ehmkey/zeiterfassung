@@ -10,7 +10,9 @@ import { CustomerComponent } from './customer/customer.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { TimetrackerComponent } from './timetracker/timetracker.component';
 
-
+import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatFormFieldModule,
+  MatDatepickerModule, MatNativeDateModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,15 @@ import { TimetrackerComponent } from './timetracker/timetracker.component';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

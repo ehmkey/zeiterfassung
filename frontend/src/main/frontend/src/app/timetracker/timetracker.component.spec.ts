@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TimetrackerComponent } from './timetracker.component';
+import {at} from '../modules/myOwnCustomMaterialModule';
 
 describe('TimetrackerComponent', () => {
   let component: TimetrackerComponent;
