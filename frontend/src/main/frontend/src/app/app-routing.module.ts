@@ -4,12 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { CustomerComponent } from './customer/customer.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { TimetrackerComponent } from './timetracker/timetracker.component';
+import { AdministratorComponent } from './administrator/administrator.component';
+import { OrderComponent} from './order/order.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'customer', component: CustomerComponent },
   { path: 'employee', component: EmployeeComponent },
-  { path: 'timetracker', component: TimetrackerComponent}
+  { path: 'timetracker', component: TimetrackerComponent},
+  { path: 'administrator', component: AdministratorComponent},
+  { path: 'order', component: OrderComponent}
   // { path: 'detail/:id', component: HeroDetailComponent },
   // { path: 'heroes', component: HeroesComponent }
 ];

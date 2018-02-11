@@ -1,14 +1,23 @@
-<p>
-  timetracker works!
-</p>
-
+<form class="example-form">
+<section class="mat-typography">
 <mat-form-field>
   <input matInput placeholder="Simple Input">
 </mat-form-field>
 
 <mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <input matInput [matDatepicker]="picker" placeholder="Datum">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Mitarbeiter" aria-label="Mitarbeiter" [matAutocomplete]="auto" [formControl]="employeeCtrl">
+    
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let employee of filteredEmployees | async" [value]="employee.lastname + employee.firstname">
+        <span>{{ employee.lastname }} {{employee.firstname}}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
